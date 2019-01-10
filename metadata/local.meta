@@ -1,0 +1,100 @@
+[app/ui]
+version = 6.6.1
+modtime = 1498034632.943843000
+
+[app/launcher]
+version = 6.6.1
+modtime = 1498034632.951029000
+
+[app/package/check_for_updates]
+version = 6.6.1
+modtime = 1498034632.955128000
+
+[views/sf_trees_service]
+owner = admin
+version = 6.6.1
+modtime = 1500281908.471073000
+
+[views/sf_trees_data_issues]
+owner = admin
+version = 6.6.2
+modtime = 1501841293.685916000
+
+[transforms/tree_species]
+access = read : [ * ], write : [ admin, power ]
+export = system
+owner = admin
+version = 6.6.1
+modtime = 1499844297.268609000
+
+[props/tree_asset/LOOKUP-tree_species]
+export = system
+owner = admin
+version = 6.6.1
+modtime = 1499844383.561755000
+
+[views/sf_trees_pruning]
+owner = admin
+version = 7.0.3
+modtime = 1542664261.111547000
+
+[nav/default]
+version = 6.6.1
+modtime = 1501145592.377439000
+
+[transforms/tree_zones]
+export = system
+owner = admin
+version = 6.6.1
+modtime = 1501145695.229244000
+
+[transforms/tree_cnn_zones]
+export = system
+owner = admin
+version = 6.6.1
+modtime = 1501147043.811295000
+
+[props/tree_asset/LOOKUP-tree_cnn_zones]
+export = system
+owner = admin
+version = 6.6.1
+modtime = 1501148518.169341000
+
+[transforms/tree_cnn]
+export = system
+owner = admin
+version = 6.6.2
+modtime = 1502031259.841521000
+
+[savedsearches/lookup_tree_cnn_zones]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.6.2
+modtime = 1501841319.454404000
+
+[savedsearches/lookup_tree_prune]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.6.2
+modtime = 1501841334.322216000
+
+[savedsearches/lookup_tree_prune_cnn]
+access = read : [ * ], write : [ admin, power ]
+export = none
+owner = admin
+version = 6.6.2
+modtime = 1501841346.331197000
+
+[lookups/tree_cnn.kmz]
+export = system
+owner = admin
+version = 6.6.2
+modtime = 1502027738.495847000
+
+[lookups/tree_zones.csv]
+export = system
+owner = admin
+version = 6.6.2
+modtime = 1502033320.278576000
