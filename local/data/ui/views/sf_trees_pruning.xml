@@ -50,6 +50,9 @@
   <row>
     <panel>
       <html>
+         <div>
+            <a type="button" class="btn" href="/app/$env:app$/$env:page$">Reset dashboard</a>
+          </div>
         <ul>
           <li>
             Default pruning cycle = 3 years
@@ -106,10 +109,10 @@
 | sort 0 cluster</query>
         </search>
         <option name="drilldown">all</option>
+        <option name="height">708</option>
         <option name="mapping.choroplethLayer.colorMode">categorical</option>
         <option name="mapping.choroplethLayer.showBorder">1</option>
         <option name="mapping.data.maxClusters">100</option>
-        <option name="height">708</option>
         <option name="mapping.legend.placement">bottomright</option>
         <option name="mapping.map.center">($zone_lat$,$zone_lon$)</option>
         <option name="mapping.map.panning">1</option>
@@ -119,7 +122,7 @@
         <option name="mapping.tileLayer.maxZoom">22</option>
         <option name="mapping.tileLayer.minZoom">0</option>
         <option name="mapping.tileLayer.tileOpacity">1</option>
-        <option name="mapping.tileLayer.url">http://mt1.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={z}</option>
+        <option name="mapping.tileLayer.url">https://mt.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={z}</option>
         <option name="mapping.type">choropleth</option>
         <option name="trellis.enabled">0</option>
         <option name="trellis.scales.shared">1</option>
@@ -243,13 +246,13 @@
       </single>
       <viz depends="$cnn$" type="leaflet_maps_app.maps-plus">
         <search base="trees">
-          <query>rename lat as latitude lon as longitude | eval tooltip="Tree ID: ".tree_id</query>
+          <query>rename lat as latitude lon as longitude | eval tooltip="Tree ID: ".tree_id | where isnotnull(latitude) AND isnotnull(longitude) | table latitude longitude tooltip</query>
         </search>
         <option name="drilldown">none</option>
         <option name="leaflet_maps_app.maps-plus.allPopups">0</option>
         <option name="leaflet_maps_app.maps-plus.animate">1</option>
         <option name="leaflet_maps_app.maps-plus.autoFitAndZoom">1</option>
-        <option name="leaflet_maps_app.maps-plus.autoFitAndZoomDelay">2000</option>
+        <option name="leaflet_maps_app.maps-plus.autoFitAndZoomDelay">1000</option>
         <option name="leaflet_maps_app.maps-plus.bingMaps">0</option>
         <option name="leaflet_maps_app.maps-plus.bingMapsLabelLanguage">en-US</option>
         <option name="leaflet_maps_app.maps-plus.bingMapsTileLayer">CanvasLight</option>
@@ -273,14 +276,14 @@
         <option name="leaflet_maps_app.maps-plus.i18nLanguage">en</option>
         <option name="leaflet_maps_app.maps-plus.layerControl">1</option>
         <option name="leaflet_maps_app.maps-plus.layerControlCollapsed">1</option>
-        <option name="leaflet_maps_app.maps-plus.mapCenterLat">39.50</option>
-        <option name="leaflet_maps_app.maps-plus.mapCenterLon">-98.35</option>
-        <option name="leaflet_maps_app.maps-plus.mapCenterZoom">6</option>
+        <option name="leaflet_maps_app.maps-plus.mapCenterLat">37.7749</option>
+        <option name="leaflet_maps_app.maps-plus.mapCenterLon">-122.4194</option>
+        <option name="leaflet_maps_app.maps-plus.mapCenterZoom">22</option>
         <option name="leaflet_maps_app.maps-plus.mapTile">http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</option>
-        <option name="leaflet_maps_app.maps-plus.mapTileOverride">http://mt.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={z}</option>
+        <option name="leaflet_maps_app.maps-plus.mapTileOverride">https://mt.google.com/vt/lyrs=m&amp;x={x}&amp;y={y}&amp;z={z}</option>
         <option name="leaflet_maps_app.maps-plus.maxClusterRadius">80</option>
         <option name="leaflet_maps_app.maps-plus.maxSpiderfySize">100</option>
-        <option name="leaflet_maps_app.maps-plus.maxZoom">19</option>
+        <option name="leaflet_maps_app.maps-plus.maxZoom">22</option>
         <option name="leaflet_maps_app.maps-plus.measureActiveColor">#00ff00</option>
         <option name="leaflet_maps_app.maps-plus.measureCompletedColor">#0066ff</option>
         <option name="leaflet_maps_app.maps-plus.measureIconPosition">topright</option>
@@ -304,16 +307,13 @@
         <option name="leaflet_maps_app.maps-plus.rangeTwoFgColor">#F0C20C</option>
         <option name="leaflet_maps_app.maps-plus.refreshInterval">0</option>
         <option name="leaflet_maps_app.maps-plus.renderer">canvas</option>
-        <option name="leaflet_maps_app.maps-plus.scrollWheelZoom">1</option>
+        <option name="leaflet_maps_app.maps-plus.scrollWheelZoom">0</option>
         <option name="leaflet_maps_app.maps-plus.showPathLines">0</option>
-        <option name="leaflet_maps_app.maps-plus.showProgress">1</option>
+        <option name="leaflet_maps_app.maps-plus.showProgress">0</option>
         <option name="leaflet_maps_app.maps-plus.singleMarkerMode">0</option>
         <option name="leaflet_maps_app.maps-plus.spiderfyDistanceMultiplier">1</option>
         <option name="leaflet_maps_app.maps-plus.stickyTooltip">1</option>
         <option name="leaflet_maps_app.maps-plus.warningThreshold">55</option>
-        <option name="trellis.enabled">0</option>
-        <option name="trellis.scales.shared">1</option>
-        <option name="trellis.size">medium</option>
       </viz>
       <table depends="$cnn$">
         <search base="trees">
