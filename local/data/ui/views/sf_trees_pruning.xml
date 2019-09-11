@@ -68,6 +68,10 @@
             <li><b>Default service record of a tree if undefined:</b> Jan 1, 2014.</li>
           </ul>
         </p>
+        <p>
+          <h2>Usage:</h2>
+          The idea is for SFDPW to set a <code>k</code> value high to get a list of clusters where each cluster don't have too many CNNs. Each cluster represents similar CNNs based on each CNN's location and average prune score. By sorting each cluster by its prune score and finding the cluster with the most negative prune score, SFDPW can determine which group of CNNs needs attention first. And since each CNN in a cluster are close together, SFDPW can try to prune all trees within that cluster at once.
+        </p>
       </html>
     </panel>
   </row>
